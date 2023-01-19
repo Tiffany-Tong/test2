@@ -19,8 +19,12 @@ let data = (
       <div class="modal-inner-container">
         <button class="close-button" @click="emits('toggleModal')">X</button>
         <h1>{{ data.title }}</h1>
-        <p class="movie-overview">{{ data.overview }}</p>
-        <h2>Release Date: {{ data.release_date }}</h2>
+        <h2>Overview:</h2>
+        <p2>{{ data.overview }}</p2>
+        <h3>Tagline:</h3> 
+        <p3> {{ data.tagline }}</p3>
+        <h4>Release Date:</h4>
+        <p4>{{ data.release_date }}</p4>
         <div class="movie-poster">
             <img :src="`https://image.tmdb.org/t/p/w500${data.poster_path}`" />
           </div>
@@ -60,6 +64,11 @@ let data = (
   width: clamp(280px, 100%, 800px);
   height: 400px;
   position: relative;
+  width: 60vw;
+  height: 83vh;
+  margin: auto;
+  display: grid;
+  grid-column: 4;
 }
 .modal-outer-container .modal-inner-container .close-button {
   position: absolute;
@@ -70,5 +79,10 @@ let data = (
   font-weight: bold;
   font-size: 1.25rem;
   color: black;
+}
+img {
+  width: 280px;
+  height: 400;
+  float: unset;
 }
 </style>

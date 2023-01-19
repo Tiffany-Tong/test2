@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import SiteModal from '../components/SiteModal.vue';
 import { useStore } from "../store/index.js"
 const store = useStore();
-const genre = ref(28);
+const genre = ref(10751);
 const showModal = ref(false);
 const selectedId = ref(0);
 const openModal = (id) => {
@@ -19,15 +19,16 @@ const getGenres = async () => {
 </script>
 
 <template>
+  <h1>Find A Movie!</h1>
   <RouterLink to="/cart" custom v-slot="{ navigate }">
     <button @click="navigate" role="link">Cart</button>
   </RouterLink>
   <select v-model="genre" @change="getGenres()">
+    <option value="10751">Family</option>
+    <option value="12">Adventure</option>
+    <option value="35">Comedy</option>
     <option value="28">Action</option>
-    <option value="12">Family</option>
-    <option value="16">Science Fiction</option>
-    <option value="35">Adventure</option>
-    <option value="80">Fantasy</option>
+    <option value="9648">Mystery</option>
   </select>
   <div class="purchase-container">
     <img v-for="movie in store.movies" :id="movie.id" @click="openModal(movie.id)"
