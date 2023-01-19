@@ -19,6 +19,11 @@ let data = (
       <div class="modal-inner-container">
         <button class="close-button" @click="emits('toggleModal')">X</button>
         <h1>{{ data.title }}</h1>
+        <p class="movie-overview">{{ data.overview }}</p>
+        <h2>Release Date: {{ data.release_date }}</h2>
+        <div class="movie-poster">
+            <img :src="`https://image.tmdb.org/t/p/w500${data.poster_path}`" />
+          </div>
         <button
           @click="
             store.addToCart(props.id, {
@@ -50,8 +55,8 @@ let data = (
   z-index: 3;
 }
 .modal-outer-container .modal-inner-container {
-  background-color: #1f2123;
-  color: white;
+  background-color: white;
+  color: black;
   width: clamp(280px, 100%, 800px);
   height: 400px;
   position: relative;
@@ -61,9 +66,9 @@ let data = (
   right: 0px;
   padding: 1rem;
   border: none;
-  background: #1f2123;
+  background: white;
   font-weight: bold;
   font-size: 1.25rem;
-  color: white;
+  color: black;
 }
 </style>
