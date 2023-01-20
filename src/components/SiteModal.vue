@@ -25,6 +25,8 @@ let data = (
         <p3> {{ data.tagline }}</p3>
         <h4>Release Date:</h4>
         <p4>{{ data.release_date }}</p4>
+        <a :href="`https://www.youtube.com/watch?v=${data.videos.results.filter((video) => video.type === 'Trailer').at(0).api_key
+        }`" target="_blank" class="text" id="movietrailer">Movie Trailer</a>
         <div class="movie-poster">
             <img :src="`https://image.tmdb.org/t/p/w500${data.poster_path}`" />
           </div>
@@ -65,7 +67,7 @@ let data = (
   height: 400px;
   position: relative;
   width: 60vw;
-  height: 83vh;
+  height: 100vh;
   margin: auto;
   display: grid;
   grid-column: 4;
