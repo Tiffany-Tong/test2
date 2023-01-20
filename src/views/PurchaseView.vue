@@ -20,9 +20,11 @@ const getGenres = async () => {
 
 <template>
   <h1>Find A Movie!</h1>
+  <div class="cart-button">
   <RouterLink to="/cart" custom v-slot="{ navigate }">
     <button @click="navigate" role="link">Cart</button>
   </RouterLink>
+</div>
   <select v-model="genre" @change="getGenres()">
     <option value="10751">Family</option>
     <option value="12">Adventure</option>
@@ -46,5 +48,10 @@ const getGenres = async () => {
 img {
   width: 200px;
   aspect-ratio: 2 / 3;
+}
+.cart-button {
+  position: absolute;
+  left: 1180px;
+  top: 70px;
 }
 </style>
